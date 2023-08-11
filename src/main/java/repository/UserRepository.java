@@ -48,7 +48,6 @@ public class UserRepository implements IUserRepository {
             ResultSet rs = preparedStatement.executeQuery();
 
             while(rs.next()) {
-                Long id = rs.getLong("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
