@@ -1,28 +1,27 @@
 package controller;
 
-import model.User;
 
 import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
+
+
 
 public class UserController extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        showForm(req, res);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        showForm(request, response);
     }
 
-    private void showForm(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("/index.jsp").forward(req, res);
+    private void showForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processForm(request,response);
     }
 
     private void processForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,9 +29,12 @@ public class UserController extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        User user = new User(name, email, password);
+        System.out.println(name);
+        System.out.println(email);
+        System.out.println(password);
 
-        System.out.println(user);
 
     }
+
 }
+

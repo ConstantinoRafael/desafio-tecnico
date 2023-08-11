@@ -4,6 +4,11 @@
   <groupId>org.example</groupId>
   <artifactId>desafio-tecnico</artifactId>
   <packaging>war</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <version>1.0-SNAPSHOT</version>
   <name>desafio-tecnico Maven Webapp</name>
   <url>http://maven.apache.org</url>
