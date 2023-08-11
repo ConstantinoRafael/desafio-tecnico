@@ -34,6 +34,8 @@ public class UserController extends HttpServlet {
         System.out.println(password);
 
 
+        request.getRequestDispatcher("/sucess.jsp").forward(request, response);
+
     }
 
 }
